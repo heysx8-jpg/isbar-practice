@@ -1,0 +1,40 @@
+/* Live generator — uses the same tokens as style.css */
+.gen { display: grid; gap: 18px; }
+.gen-panel { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; min-width: 0; }
+.gen-panel > h2 { margin: 0 0 4px; font-size: 1.15rem; }
+.gen-sub { color: var(--muted); margin: 0 0 12px; font-size: .95rem; }
+.gen-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+.gen-field { display: grid; gap: 4px; min-width: 0; }
+.gen-field label { font-size: .82rem; font-weight: 600; letter-spacing: .02em; color: var(--muted); }
+.gen-field select, .gen-field input, .gen-field textarea {
+  font: inherit; font-size: .95rem; color: var(--ink); background: var(--paper);
+  border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; width: 100%; min-height: 40px;
+}
+.gen-field textarea { min-height: 60px; resize: vertical; }
+.gen-wide { grid-column: 1 / -1; }
+.gen-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 14px; }
+.gen-btn { font: inherit; font-weight: 600; font-size: .95rem; border-radius: 7px; padding: 9px 16px; min-height: 42px; cursor: pointer;
+  border: 1px solid var(--accent); background: var(--accent); color: var(--on-accent, #fff); }
+.gen-btn.secondary { background: var(--paper); color: var(--accent); }
+.gen-btn:disabled { opacity: .45; cursor: not-allowed; }
+.gen-btn:focus-visible, .gen-field :focus-visible { outline: 3px solid var(--accent-soft); outline-offset: 1px; }
+.gen-status { color: var(--muted); font-size: .9rem; }
+.gen-out { font-family: var(--serif, Georgia, serif); font-size: 1.02rem; line-height: 1.6; min-width: 0; overflow-wrap: anywhere; }
+.gen-out h2 { font-family: var(--font, sans-serif); font-size: 1.35rem; margin: 0 0 .3em; }
+.gen-out h3 { font-family: var(--font, sans-serif); font-size: 1.05rem; margin: 1.2em 0 .3em; }
+.gen-out h4 { font-family: var(--font, sans-serif); font-size: .98rem; margin: 1em 0 .2em; }
+.gen-out p { margin: 0 0 .75em; }
+.gen-out ul { margin: 0 0 .8em; padding-left: 1.2em; }
+.gen-meta { color: var(--muted); font-size: .85rem; margin: 10px 0 0; }
+.gen-thinking { color: var(--muted); font-style: italic; }
+.gen-example-tag { display: inline-block; font: 600 .72rem/1 var(--font, sans-serif); letter-spacing: .06em; text-transform: uppercase;
+  color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 5px 9px; margin-bottom: 10px; }
+.gen-key { display: grid; gap: 8px; }
+.gen-key .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.gen-key input[type=password] { flex: 1 1 260px; font: inherit; padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--paper); color: var(--ink); min-height: 40px; }
+.gen-callout { background: var(--accent-soft); border-radius: 8px; padding: 12px 14px; }
+.gen-callout p { margin: 0 0 6px; } .gen-callout p:last-child { margin: 0; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.gen-home { background: var(--accent-soft); border: 1px solid var(--line); border-radius: 10px; padding: 18px 22px; margin: 18px 0; }
+.gen-home h2 { margin-top: 0; }
+.gen-model { flex: 1 1 200px; font: inherit; padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--paper); color: var(--ink); min-height: 40px; }

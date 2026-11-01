@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ISBAR case generator</title>
+<meta name="description" content="Generate a new OT ISBAR practice case and sample answer with Claude.">
+<link rel="stylesheet" href="assets/style.css"><link rel="stylesheet" href="assets/generator.css">
+</head>
+<body class="">
+<nav class="topbar no-print"><a href="index.html">ISBAR practice</a></nav>
+<main>
+
+<header class="doc-head">
+  <p class="kicker">Live generator</p>
+  <h1>Generate a new ISBAR practice case</h1>
+  <p class="meta">The AI writes a fresh case in the same style as the case bank, then a sample 7-minute answer when you're ready.</p>
+</header>
+<section class="gen-panel gen-key" aria-labelledby="gen-key-h" style="margin:18px 0">
+  <h2 id="gen-key-h">Connect your OpenAI (ChatGPT) API key</h2>
+  <div class="gen-callout">
+    <p>Paste an OpenAI API key from <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener">platform.openai.com/api-keys</a>. The key goes straight from your browser to OpenAI. This site has no server and never receives it. “Remember on this device” keeps it only in this browser.</p>
+    <p>A ChatGPT Plus subscription doesn't include API access. API use is billed separately on the OpenAI platform, usually a few cents per case and answer.</p>
+  </div>
+  <div class="row">
+    <label for="gen-key" class="sr">OpenAI API key</label>
+    <input type="password" id="gen-key" autocomplete="off" spellcheck="false" placeholder="sk-…">
+    <label><input type="checkbox" id="gen-remember"> Remember on this device</label>
+  </div>
+  <div class="row">
+    <label for="gen-model"><strong>Model</strong></label>
+    <input id="gen-model" class="gen-model" list="gen-model-list" spellcheck="false" autocomplete="off">
+    <datalist id="gen-model-list"></datalist>
+  </div>
+  <p class="gen-status" id="gen-model-note">Model suggestions load once your key is pasted.</p>
+</section>
+
+<div class="gen" id="gen-root">
+  <form class="gen-panel" id="gen-form">
+    <h2>1. Choose the case</h2>
+    <p class="gen-sub">Leave anything on “Surprise me” to let Claude choose. Each new case hides one immediate priority among realistic distractors.</p>
+    <div class="gen-grid">
+      <div class="gen-field"><label for="gen-topic">Condition</label><select id="gen-topic"><option value="Stroke">Stroke</option><option value="Cerebral palsy">Cerebral palsy</option><option value="Spinal cord injury">Spinal cord injury</option><option value="Distal radius fracture">Distal radius fracture</option><option value="other">Other condition…</option></select></div>
+      <div class="gen-field" id="gen-other-wrap"><label for="gen-other">Other condition</label><input id="gen-other" placeholder="e.g. Parkinson’s disease"></div>
+      <div class="gen-field"><label for="gen-age">Age group</label><select id="gen-age"><option value="any">Surprise me</option><option value="a child aged 0–12">Child (0–12)</option><option value="an adolescent aged 13–17">Adolescent (13–17)</option><option value="a young adult aged 18–35">Young adult (18–35)</option><option value="an adult aged 36–64">Adult (36–64)</option><option value="an older adult aged 65 or over">Older adult (65+)</option></select></div>
+      <div class="gen-field"><label for="gen-gender">Gender</label><select id="gen-gender"><option value="any">Surprise me</option><option value="female">Female</option><option value="male">Male</option><option value="non-binary (use they/them)">Non-binary</option></select></div>
+      <div class="gen-field"><label for="gen-setting">Setting</label><select id="gen-setting"><option value="any">Surprise me</option><option value="acute hospital ward">Acute hospital ward</option><option value="emergency department or short-stay unit">Emergency / short stay</option><option value="inpatient rehabilitation unit">Inpatient rehabilitation</option><option value="outpatient clinic (e.g. hand therapy or fracture clinic)">Outpatient clinic</option><option value="community home visit">Community home visit</option><option value="school">School</option><option value="supported independent living (NDIS)">Supported living</option></select></div>
+      <div class="gen-field gen-wide"><label for="gen-twist">Focus or twist (optional)</label><textarea id="gen-twist" placeholder="e.g. a discharge-day case where the family is pushing to go home; or a case where the main issue is pain"></textarea></div>
+    </div>
+    <div class="gen-actions">
+      <button class="gen-btn" id="gen-case-btn" type="submit">Generate case</button>
+      <button class="gen-btn secondary" id="gen-stop" type="button" hidden>Stop</button>
+      <span class="gen-status" id="gen-status" role="status" aria-live="polite"></span>
+    </div>
+  </form>
+  <section class="gen-panel" aria-labelledby="gen-case-h">
+    <h2 id="gen-case-h">2. Prepare and present</h2>
+    <div class="gen-out" id="gen-case"><span class="gen-example-tag">Example case</span><h2>Case study: Ivy</h2>
+<p>Condition: Stroke – right hemisphere ischaemic stroke</p>
+<p>Client: 81-year-old woman · Acute stroke unit, public hospital</p>
+<p>Ivy Papadopoulos is an 81-year-old woman who was admitted to the acute stroke unit eight days ago with a <strong>right hemisphere ischaemic stroke</strong>. Ivy has been widowed for six years and lives alone in a single-storey house. Her son, Nick, lives in Toowoomba, approximately two hours away, and is listed as her next of kin. Before her stroke, Ivy was independent in all daily activities, attended her local church every Sunday and drove herself to the shops.</p>
+<p>Ivy has mild weakness in her left arm and leg. Physiotherapy has documented that she is safe to mobilise independently on the ward with a four-wheeled walker. A brief cognitive screen completed by the medical team two days ago is documented as “within normal range”, and the medical team has determined that Ivy is medically fit for discharge home today.</p>
+<p>You have been asked to complete a pre-discharge kitchen assessment in the ward’s occupational therapy kitchen, in which Ivy will make a cup of tea. Ivy is bright and chatty. She tells you about her friends at church and shows you photos of her five grandchildren on her phone. “I’ve made thousands of cups of tea, love,” she says. “This will be easy.”</p>
+<p>On the way into the kitchen, Ivy’s walker catches the left side of the door frame twice. She does not comment and only gets through after you guide the walker. Ivy explains that at home she boils water in a small saucepan rather than a kettle. She fills a saucepan and places it on the front right hotplate, but turns on the back left hotplate and then walks to the fridge to look for milk. You turn the hotplate off. When you point out that the saucepan is not heating, Ivy says, “Give it a minute, dear, that stove is always slow.”</p>
+<p>You set out a tray with two cups, teabags, a sugar bowl and teaspoons. Ivy uses the items on the right side of the tray but asks you where the sugar is, although the sugar bowl is on the left side of the tray. She leaves the left-hand cup empty. To talk about her plans after discharge, you show her a short shopping list written in two columns. Ivy reads the four items in the right-hand column and says, “That’s all I need.”</p>
+<p>When you ask how her left arm and leg are going, Ivy says, “There’s nothing wrong with that side, dear. The doctors fuss too much.” While drinking her tea, she tells you her fridge will be empty when she gets home and she will “just drive down to the shops in the morning”, as she always does. Her car is parked in her garage at home.</p>
+<p>There is no clear documentation regarding whether Ivy has been given advice about driving since her stroke, whether a home visit has been considered, or what supports, if any, have been arranged for after discharge. It is also unclear whether the medical team noticed any of these difficulties during the cognitive screen.</p>
+<p>As you return to the ward, a nurse hands Ivy the ward phone. It is Nick, who has booked a taxi to take her home at 1 pm and wants it confirmed before he starts his shift, as he will not be contactable until tonight. The nurse in charge then tells you that the emergency department has a patient waiting for Ivy’s bed and asks whether you have finished. Ivy smiles and says, “See, it’s all organised. I’ll be home by lunchtime.”</p>
+<p><strong>You are the occupational therapy student completing Ivy’s pre-discharge kitchen assessment and your clinical supervisor is not currently in the room.</strong></p>
+<p><strong>Present Ivy’s case to your clinical supervisor using the ISBAR framework. Identify the immediate concerns and explain what you would prioritise in responding to the situation.</strong></p></div>
+    <p class="gen-meta" id="gen-case-meta">This is an example from the case bank. Press “Generate case” for a new one.</p>
+    <div class="gen-actions"><button class="gen-btn secondary" id="gen-copy" type="button" hidden>Copy case</button></div>
+  </section>
+  <section class="gen-panel" aria-labelledby="gen-ans-h">
+    <h2 id="gen-ans-h">3. Compare with a sample answer</h2>
+    <p class="gen-sub">Present your own ISBAR first. Then generate a sample 7-minute answer with coaching notes for the case above.</p>
+    <div class="gen-actions"><button class="gen-btn" id="gen-answer-btn" type="button" disabled>Generate sample answer</button></div>
+    <div class="gen-out" id="gen-answer"></div>
+    <p class="gen-meta" id="gen-answer-meta"></p>
+  </section>
+</div>
+<script src="assets/generator-data.js"></script>
+<script src="assets/generator-core.js"></script>
+<script src="assets/openai-backend.js"></script>
+
+</main>
+<footer><p>Unofficial practice material. All cases are fictional and written for ISBAR communication practice; they are not clinical guidance. Not produced by or affiliated with any university.</p></footer>
+<script src="assets/timer.js"></script>
+</body>
+</html>
