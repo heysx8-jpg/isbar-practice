@@ -3,7 +3,7 @@
    browser's localStorage only if they tick "Remember on this device". */
 (function () {
   "use strict";
-  var DEFAULT_MODEL = "gpt-5";
+  var DEFAULT_MODEL = "gpt-5.5";
   var keyBox = document.getElementById("gen-key"), remember = document.getElementById("gen-remember");
   var modelBox = document.getElementById("gen-model"), modelList = document.getElementById("gen-model-list");
   var modelNote = document.getElementById("gen-model-note");
